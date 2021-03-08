@@ -7,6 +7,8 @@ import 'package:resume/screen/resume/components/education_list.dart';
 import 'package:resume/screen/resume/components/header_title.dart';
 import 'package:resume/screen/resume/components/summary.dart';
 
+import 'components/experience_list.dart';
+
 class ResumeScreen extends StatefulWidget {
   const ResumeScreen({
     Key? key,
@@ -38,6 +40,10 @@ class _ResumeScreenState extends State<ResumeScreen> {
       Padding(
         padding: const EdgeInsets.only(top: 15.0),
         child: EducationList(items: widget.person.education),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: ExperienceList(items: widget.person.experience),
       ),
     ];
   }

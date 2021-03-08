@@ -1,4 +1,5 @@
 import 'package:resume/model/entity/education.dart';
+import 'package:resume/model/entity/experience.dart';
 
 class Person {
   Person({
@@ -9,7 +10,9 @@ class Person {
     this.phone,
     required this.summary,
     List<Education>? education,
-  }) : this.education = education ?? [];
+    List<Experience>? experience,
+  })  : this.education = education ?? [],
+        this.experience = experience ?? [];
 
   String name;
   String title;
@@ -18,4 +21,5 @@ class Person {
   String? phone;
   String summary;
   List<Education> education;
+  List<Experience> experience;
 }
