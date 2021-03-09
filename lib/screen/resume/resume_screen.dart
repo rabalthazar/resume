@@ -26,11 +26,6 @@ class ResumeScreen extends StatefulWidget {
 class _ResumeScreenState extends State<ResumeScreen> {
   bool _isLargeScreen = false;
 
-  Widget _buildHeaderBackground() => Container(
-        height: ResumeScreen.headerHeight,
-        color: const Color.fromRGBO(75, 75, 75, 1.0),
-      );
-
   List<Widget> _buildDetailsViewWidgets() {
     return [
       Padding(

@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
           endMonth: 1,
           endYear: 2000,
           description: 'Geographic Information Systems (GIS) developer\n'
-              '(Spatial Database Engine (GIS) administration\n'
-              'Implantation of aero/satellite photos and huge image manipulation systems',
+              'Implantation of aero/satellite photos and huge image manipulation systems\n'
+              'Spatial Database Engine (SDE) administration'
         ),
         Experience(
           logoUrl: 'images/controllab.jpeg',

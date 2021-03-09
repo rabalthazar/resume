@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:resume/components/asset_avatar.dart';
+import 'package:resume/components/expandable_text.dart';
 import 'package:resume/components/info_card.dart';
 import 'package:resume/model/entity/experience.dart';
 
@@ -41,7 +41,12 @@ class ExperienceItem extends StatelessWidget {
           ),
         ],
       ),
-      body: null != item.description ? Text(item.description!) : null,
+      body: null != item.description
+          ? ExpandableText(
+              item.description!,
+              maxLines: 2,
+            )
+          : null,
     );
   }
 }
