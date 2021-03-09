@@ -7,6 +7,8 @@ import 'package:resume/screen/resume/components/education_list.dart';
 import 'package:resume/screen/resume/components/header_title.dart';
 import 'package:resume/screen/resume/components/summary.dart';
 
+import 'components/experience_list.dart';
+
 class ResumeScreen extends StatefulWidget {
   const ResumeScreen({
     Key? key,
@@ -24,11 +26,6 @@ class ResumeScreen extends StatefulWidget {
 class _ResumeScreenState extends State<ResumeScreen> {
   bool _isLargeScreen = false;
 
-  Widget _buildHeaderBackground() => Container(
-        height: ResumeScreen.headerHeight,
-        color: const Color.fromRGBO(75, 75, 75, 1.0),
-      );
-
   List<Widget> _buildDetailsViewWidgets() {
     return [
       Padding(
@@ -38,6 +35,10 @@ class _ResumeScreenState extends State<ResumeScreen> {
       Padding(
         padding: const EdgeInsets.only(top: 15.0),
         child: EducationList(items: widget.person.education),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 15.0),
+        child: ExperienceList(items: widget.person.experience),
       ),
     ];
   }

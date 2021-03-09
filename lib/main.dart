@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/model/entity/education.dart';
+import 'package:resume/model/entity/experience.dart';
 import 'package:resume/model/entity/person.dart';
 import 'package:resume/screen/resume/resume_screen.dart';
 
@@ -41,6 +42,35 @@ class MyApp extends StatelessWidget {
           fieldOfStudy: 'Project Management',
         ),
       ],
+      experience: [
+        Experience(
+          logoUrl: 'images/ipp.png',
+          title: 'Software Developer',
+          employmentType: EmploymentType.Contract,
+          company:
+              'Instituto Municipal Pereira Passos - Prefeitura do Rio de Janeiro',
+          location: 'Rio de Janeiro, RJ, Brazil',
+          currentlyWorking: false,
+          startMonth: 8,
+          startYear: 1998,
+          endMonth: 1,
+          endYear: 2000,
+          description: 'Geographic Information Systems (GIS) developer\n'
+              'Implantation of aero/satellite photos and huge image manipulation systems\n'
+              'Spatial Database Engine (SDE) administration'
+        ),
+        Experience(
+          logoUrl: 'images/controllab.jpeg',
+          title: 'IT Manager',
+          employmentType: EmploymentType.FullTime,
+          company:
+          'Controllab',
+          location: 'Rio de Janeiro, RJ, Brazil',
+          currentlyWorking: true,
+          startMonth: 2,
+          startYear: 2000,
+        ),
+      ],
     );
 
     return MaterialApp(
@@ -48,7 +78,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color.fromRGBO(75, 75, 75, 1.0),
         fontFamily: 'Raleway',
-        textTheme: Theme.of(context).textTheme.apply(fontSizeFactor: 1.1, ),
+        textTheme: Theme.of(context).textTheme.apply(
+              fontSizeFactor: 1.1,
+            ),
       ),
       home: ResumeScreen(
         person: person,
