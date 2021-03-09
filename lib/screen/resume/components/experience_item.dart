@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:resume/components/info_card.dart';
 import 'package:resume/model/entity/experience.dart';
 
 class ExperienceItem extends StatelessWidget {
@@ -15,56 +16,31 @@ class ExperienceItem extends StatelessWidget {
     final formatter = DateFormat.yMMMM();
     final strStart = formatter.format(start);
     final strEnd = item.currentlyWorking ? 'Present' : formatter.format(end);
-    final theme = Theme.of(context);
 
-    return Card(
-      child: Row(
+    return InfoCard(
+      leading: CircleAvatar(
+        backgroundColor: Colors.blueAccent,
+        child: Text('EX'),
+      ),
+      title: Text(
+        item.title,
+      ),
+      subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12.0,),
-            child: CircleAvatar(
-              backgroundColor: Colors.blueAccent,
-              child: Text('EX'),
-            ),
+          Text(
+            [
+              item.company,
+              if (null != item.location) item.location,
+              item.employmentType.asString(),
+            ].join(' - '),
           ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.title,
-                    style: theme.textTheme.subtitle1,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0),
-                    child: Text(
-                      [
-                        item.company,
-                        if (null != item.location) item.location,
-                        item.employmentType.asString(),
-                      ].join(' - '),
-                      style: theme.textTheme.bodyText2
-                          ?.copyWith(color: theme.textTheme.caption!.color),
-                    ),
-                  ),
-                  Text(
-                    '$strStart - $strEnd',
-                    style: theme.textTheme.bodyText2
-                        ?.copyWith(color: theme.textTheme.caption!.color),
-                  ),
-                  if (null != item.description) Padding(
-                    padding: const EdgeInsets.only(top: 6.0),
-                    child: Text(item.description!),
-                  ),
-                ],
-              ),
-            ),
+          Text(
+            '$strStart - $strEnd',
           ),
         ],
       ),
+      body: null != item.description ? Text(item.description!) : null,
     );
   }
 }
