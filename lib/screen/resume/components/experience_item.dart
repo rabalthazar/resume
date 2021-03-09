@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:resume/components/asset_avatar.dart';
 import 'package:resume/components/info_card.dart';
 import 'package:resume/model/entity/experience.dart';
 
@@ -18,9 +19,9 @@ class ExperienceItem extends StatelessWidget {
     final strEnd = item.currentlyWorking ? 'Present' : formatter.format(end);
 
     return InfoCard(
-      leading: CircleAvatar(
-        backgroundColor: Colors.blueAccent,
-        child: Text('EX'),
+      leading: Image.asset(
+        item.logoUrl,
+        width: 70.0,
       ),
       title: Text(
         item.title,

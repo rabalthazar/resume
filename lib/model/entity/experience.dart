@@ -27,6 +27,7 @@ extension EmploymentTypeToString on EmploymentType {
 
 class Experience {
   Experience({
+    required this.logoUrl,
     required this.title,
     required this.employmentType,
     required this.company,
@@ -39,6 +40,7 @@ class Experience {
     this.description,
   });
 
+  String logoUrl;
   String title;
   EmploymentType employmentType;
   String company;
