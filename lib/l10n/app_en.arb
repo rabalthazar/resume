@@ -1,0 +1,40 @@
+{
+  "appTitle": "{name}'s Resume",
+  "@appTitle": {
+    "description": "The app's main title",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Rafael"
+      }
+    }
+  },
+  "contact": "Contact",
+  "@contact": {
+    "description": "Contact section title"
+  },
+  "education": "Education",
+  "@education": {
+    "description": "Education section title"
+  },
+  "experience": "Experience",
+  "@experience": {
+    "description": "Experience section title"
+  },
+  "present": "Present",
+  "@present": {
+    "description": "Text used to indicate an ongoing job"
+  },
+  "seeLess": "see less",
+  "@seeLess": {
+    "description": "Exhibited on cards description when they're expanded"
+  },
+  "seeMore": "see more",
+  "@seeMore": {
+    "description": "Exhibited on cards description when they're collapsed"
+  },
+  "summary": "Summary",
+  "@summary": {
+    "description": "Summary title"
+  }
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Summary extends StatelessWidget {
   final String summary;
@@ -13,7 +14,7 @@ class Summary extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(bottom: 10.0),
           child: Text(
-            'Summary',
+            AppLocalizations.of(context)!.summary,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
