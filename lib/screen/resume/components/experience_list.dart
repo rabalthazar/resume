@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:resume/model/entity/experience.dart';
 import 'package:resume/screen/resume/components/experience_item.dart';
 
@@ -21,7 +22,7 @@ class ExperienceList extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10.0),
           alignment: Alignment.centerLeft,
           child: Text(
-            'Experience',
+            AppLocalizations.of(context)!.experience,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),

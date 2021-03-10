@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:resume/model/entity/education.dart';
 import 'package:resume/screen/resume/components/education_item.dart';
 
@@ -21,7 +22,7 @@ class EducationList extends StatelessWidget {
           padding: EdgeInsets.only(bottom: 10.0),
           alignment: Alignment.centerLeft,
           child: Text(
-            'Education',
+            AppLocalizations.of(context)!.education,
             style: Theme.of(context).textTheme.headline6,
           ),
         ),

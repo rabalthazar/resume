@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:resume/components/empty_widget.dart';
 import 'package:resume/components/link.dart';
 
@@ -17,7 +18,7 @@ class Contacts extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 4.0),
                 child: Text(
-                  'Contact'.toUpperCase(),
+                  AppLocalizations.of(context)!.contact.toUpperCase(),
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ),

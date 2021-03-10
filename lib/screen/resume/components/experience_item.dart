@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:resume/components/expandable_text.dart';
 import 'package:resume/components/info_card.dart';
@@ -14,9 +15,9 @@ class ExperienceItem extends StatelessWidget {
     final start = DateTime(item.startYear, item.startMonth);
     final now = DateTime.now();
     final end = DateTime(item.endYear ?? now.year, item.endMonth ?? now.month);
-    final formatter = DateFormat.yMMMM();
+    final formatter = DateFormat.yMMMM(Localizations.localeOf(context).toLanguageTag());
     final strStart = formatter.format(start);
-    final strEnd = item.currentlyWorking ? 'Present' : formatter.format(end);
+    final strEnd = item.currentlyWorking ? AppLocalizations.of(context)!.present : formatter.format(end);
 
     return InfoCard(
       leading: Image.asset(
@@ -45,6 +46,8 @@ class ExperienceItem extends StatelessWidget {
           ? ExpandableText(
               item.description!,
               maxLines: 2,
+              lessText: AppLocalizations.of(context)!.seeLess,
+              moreText: AppLocalizations.of(context)!.seeMore,
             )
           : null,
     );
